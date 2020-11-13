@@ -1,0 +1,22 @@
+@import "../sass/variables.scss";
+
+header.header {
+  background-color: $header-color;
+  padding: 0.5rem;
+
+  nav {
+    max-width: 700px;
+    margin: 0 auto;
+
+    h1.logo {
+      margin: 0;
+      font-size: 1.25rem;
+
+      a {
+        text-decoration: none;
+        text-shadow: none;
+        background-image: none;
+      }
+    }
+  }
+}
