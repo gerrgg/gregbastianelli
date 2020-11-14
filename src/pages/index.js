@@ -2,43 +2,71 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "../sass/index.scss"
+import Post from "../components/post"
 
 export default function Home({ data }) {
   // data is the result of the query
+  const posts = data.allWpPost.nodes
+  const categories = data.allWpCategory.nodes
+
   return (
     <Layout>
       <SEO title="Home" />
       <div id="home">
-        <h4>Recently Published</h4>
-        {data.allWpPost.nodes.map(node => (
-          <Post node={node} />
-        ))}
+        <div className="row">
+          <PostsColumn posts={posts} />
+          <Sidebar categories={categories} posts={posts} />
+        </div>
       </div>
     </Layout>
   )
 }
 
-const Post = ({ node }) => {
+const PostsColumn = ({ posts }) => (
+  <div className="col-12 col-sm-8">
+    <h4>Recently Published</h4>
+    {posts.map(post => (
+      <Post key={post.id} post={post} />
+    ))}
+  </div>
+)
+
+const Sidebar = ({ categories, posts }) => {
+  // reverse list and extract 8 (implement view or clap counter)
+  const popularPosts = posts.reverse().slice(0, 8)
+
   return (
-    <div className="post">
-      <Link to={node.slug}>
-        <h2>{node.title}</h2>
-        <PostExcerpt excerpt={node.excerpt} />
-        <span>Read more</span>
-      </Link>
+    <div id="sidebar" className="col-12 col-sm-4">
+      <h4>Top Categories</h4>
+      <TopCategories categories={categories} />
+      <h4>Popular Posts</h4>
+      <PopularPosts posts={popularPosts} />
     </div>
   )
 }
 
-const PostExcerpt = ({ excerpt }) => {
+const TopCategories = ({ categories }) => (
+  <div id="top-categories">
+    {categories.map(category => {
+      return (
+        <Link className="category-link" to={category.link}>
+          {category.name}
+        </Link>
+      )
+    })}
+  </div>
+)
+
+const PopularPosts = ({ posts }) => {
+  console.log(posts)
   return (
-    <div
-      className="excerpt"
-      dangerouslySetInnerHTML={{
-        __html: excerpt.replace(/^(.{150}[^\s]*).*/, "$1..."),
-      }}
-    />
+    <ul id="popularPosts">
+      {posts.map(post => (
+        <li>
+          <Link to={post.slug}>{post.title}</Link>
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -47,9 +75,22 @@ export const pageQuery = graphql`
   query {
     allWpPost(sort: { fields: [date], order: DESC }) {
       nodes {
+        id
         title
         excerpt
         slug
+      }
+    }
+    allWpCategory {
+      nodes {
+        id
+        name
+        link
+        posts {
+          nodes {
+            id
+          }
+        }
       }
     }
   }

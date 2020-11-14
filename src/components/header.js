@@ -5,7 +5,7 @@ import "../sass/header.scss"
 
 const Header = ({ siteTitle }) => (
   <header className="header">
-    <nav>
+    <div className="container">
       <h1 className="logo">
         <Link
           to="/"
@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-    </nav>
+    </div>
   </header>
 )
 

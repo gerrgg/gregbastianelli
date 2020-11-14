@@ -10,7 +10,7 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const result = await graphql(`
+  const results = await graphql(`
     {
       allWpPost(sort: { fields: [date] }) {
         nodes {
@@ -20,15 +20,33 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
         }
       }
+      allWpCategory {
+        nodes {
+          id
+          link
+        }
+      }
     }
   `)
 
-  result.data.allWpPost.nodes.forEach(node => {
+  // make post pages
+  results.data.allWpPost.nodes.forEach(node => {
     createPage({
       path: node.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: node.slug,
+      },
+    })
+  })
+
+  // make category pages
+  results.data.allWpCategory.nodes.forEach(node => {
+    createPage({
+      path: node.link,
+      component: path.resolve(`./src/templates/blog-category.js`),
+      context: {
+        id: node.id,
       },
     })
   })
