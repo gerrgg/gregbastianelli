@@ -4,11 +4,15 @@ import { graphql } from "gatsby"
 
 export default function BlogPost({ data }) {
   const post = data.allWpPost.nodes[0]
+  const featuredImage = post.featuredImage
+    ? post.featuredImage.node.mediaItemUrl
+    : null
 
   return (
     <Layout>
-      <div>
-        <h1>{post.title}</h1>
+      <div id="single">
+        <h1 className="title">{post.title}</h1>
+        <img src={featuredImage} />
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
     </Layout>
@@ -21,6 +25,17 @@ export const query = graphql`
       nodes {
         title
         content
+        categories {
+          nodes {
+            name
+            link
+          }
+        }
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
       }
     }
   }

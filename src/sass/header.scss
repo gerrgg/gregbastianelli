@@ -4,14 +4,38 @@ header.header {
   background-color: $header-color;
   padding: 0.5rem;
 
-  h1.logo {
-    margin: 0;
-    font-size: 1.25rem;
+  .container {
+    display: flex;
+    align-items: baseline;
 
-    a {
-      text-decoration: none;
-      text-shadow: none;
-      background-image: none;
+    nav {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 1rem;
+        display: flex;
+
+        li {
+          padding: 0 1rem;
+          margin: 0;
+
+          a {
+            color: $header-link-color;
+          }
+        }
+      }
+    }
+
+    h1.logo {
+      margin: 0;
+      font-size: 1.25rem;
+
+      a {
+        color: $color-main;
+        text-decoration: none;
+        text-shadow: none;
+        background-image: none;
+      }
     }
   }
 }

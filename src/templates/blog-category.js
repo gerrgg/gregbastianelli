@@ -7,8 +7,6 @@ export default function BlogPost({ data }) {
   const category = data.allWpCategory.nodes[0]
   const posts = category.posts.nodes
 
-  console.log(category, posts)
-
   return (
     <Layout>
       <div>

@@ -49,7 +49,7 @@ const TopCategories = ({ categories }) => (
   <div id="top-categories">
     {categories.map(category => {
       return (
-        <Link className="category-link" to={category.link}>
+        <Link key={category.id} className="category-link" to={category.link}>
           {category.name}
         </Link>
       )
@@ -58,11 +58,10 @@ const TopCategories = ({ categories }) => (
 )
 
 const PopularPosts = ({ posts }) => {
-  console.log(posts)
   return (
     <ul id="popularPosts">
       {posts.map(post => (
-        <li>
+        <li key={post.id}>
           <Link to={post.slug}>{post.title}</Link>
         </li>
       ))}
@@ -79,6 +78,11 @@ export const pageQuery = graphql`
         title
         excerpt
         slug
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
       }
     }
     allWpCategory {
