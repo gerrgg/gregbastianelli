@@ -10,13 +10,11 @@
   }
   header {
     margin: 2rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    text-align: center;
 
     h1,
     p {
-      margin: 0;
+      margin: 0.5rem;
     }
 
     .post-count {
