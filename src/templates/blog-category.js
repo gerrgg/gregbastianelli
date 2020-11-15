@@ -9,11 +9,14 @@ export default function BlogPost({ data }) {
 
   return (
     <Layout>
-      <div>
-        <h1>{category.name}</h1>
-        <div id="archive">
+      <div id="archive">
+        <header>
+          <h1>{category.name}</h1>
+          <p className="post-count">{posts.length} Articles</p>
+        </header>
+        <div className="row">
           {posts.map(post => (
-            <Post post={post} />
+            <Post post={post} className="col-12 col-md-5" />
           ))}
         </div>
       </div>

@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Post = ({ post }) => {
+const Post = ({ post, className }) => {
   return (
-    <div className="post">
+    <div className={`post ${className ? className : ""}`}>
       <Link to={`/${post.slug}`}>
         <h2>{post.title}</h2>
         <PostExcerpt excerpt={post.excerpt} />

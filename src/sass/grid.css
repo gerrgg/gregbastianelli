@@ -28,10 +28,10 @@ html {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 690px) {
   .container,
   .container-sm {
-    max-width: 540px;
+    max-width: 680px;
   }
 }
 

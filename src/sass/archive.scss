@@ -1,0 +1,30 @@
+@import "variables";
+
+#archive {
+  .post {
+    background-color: $post-background-color;
+    border: 1px solid $post-background-color;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 12px;
+  }
+  header {
+    margin: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    h1,
+    p {
+      margin: 0;
+    }
+
+    .post-count {
+      line-height: 1rem;
+    }
+  }
+
+  .row {
+    justify-content: center;
+  }
+}
