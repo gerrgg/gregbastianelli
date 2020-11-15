@@ -24,6 +24,7 @@
     "react-helmet": "^6.1.0",
     "react-popper": "^2.2.4",
     "react-popper-tooltip": "^3.1.1",
+    "react-syntax-highlighter": "^15.3.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-ocean-beach": "^0.16.19"

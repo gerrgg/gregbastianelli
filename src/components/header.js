@@ -1,4 +1,4 @@
-import { Link, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Menu from "./menu"
@@ -36,14 +36,24 @@ const Header = ({ siteTitle }) => {
   return (
     <header className="header">
       <div className="container">
-        <h1 className="logo">
-          <Link to="/">{siteTitle}</Link>
-        </h1>
+        <Logo siteTitle={siteTitle} />
         <nav>
           <Menu menu={menu} />
         </nav>
       </div>
     </header>
+  )
+}
+
+const Logo = ({ siteTitle }) => {
+  const string = siteTitle.split(" ")
+  return (
+    <h1 className="logo">
+      <Link to="/">
+        <span className="color-main">{string[0]}</span>{" "}
+        <span className="color-secondary">{string[1]}</span>
+      </Link>
+    </h1>
   )
 }
 

@@ -30,16 +30,27 @@
   max-width: 700px;
   margin: 0 auto;
 
-  h1.title {
+  h6.post-category {
     text-align: center;
-    color: $text-color;
+    a {
+      color: $color-main;
+    }
   }
 
-  img.featuredImage {
+  h1.title {
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  img {
+    width: 100%;
     margin: 0 auto;
+    border: 1px solid #f9f9f9;
   }
 
   pre {
+    white-space: pre-wrap;
+    word-break: break-all;
     background-color: $code-background-color;
     padding: 1rem;
     code {

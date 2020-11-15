@@ -34,11 +34,14 @@ const PostsColumn = ({ posts }) => (
 const Sidebar = ({ categories, posts }) => {
   // reverse list and extract 8 (implement view or clap counter)
   const popularPosts = posts.reverse().slice(0, 8)
+  const topCategories = categories.filter(
+    category => category.posts.nodes.length
+  )
 
   return (
     <div id="sidebar" className="col-12 col-sm-4">
       <h4>Top Categories</h4>
-      <TopCategories categories={categories} />
+      <TopCategories categories={topCategories} />
       <h4>Popular Posts</h4>
       <PopularPosts posts={popularPosts} />
     </div>
