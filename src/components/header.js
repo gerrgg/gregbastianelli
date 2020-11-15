@@ -1,6 +1,7 @@
 import { Link, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Menu from "./menu"
 import "../sass/header.scss"
 
 const Header = ({ siteTitle }) => {
@@ -45,29 +46,6 @@ const Header = ({ siteTitle }) => {
     </header>
   )
 }
-
-const Menu = ({ menu }) => (
-  <ul>
-    {menu.map(menuItem => {
-      const children = menuItem.childItems.nodes.length
-        ? menuItem.childItems.nodes
-        : null
-
-      return (
-        <li>
-          <a href={menuItem.path}>{menuItem.label}</a>
-          {children ? (
-            <ul>
-              {children.map(child => (
-                <li>{child.label}</li>
-              ))}
-            </ul>
-          ) : null}
-        </li>
-      )
-    })}
-  </ul>
-)
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -8,3 +8,8 @@ a {
   background-image: none;
   text-shadow: none;
 }
+
+div.flex-square {
+  display: flex;
+  flex-wrap: wrap;
+}
