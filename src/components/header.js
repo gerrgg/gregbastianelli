@@ -6,19 +6,31 @@ import "../sass/header.scss"
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(
     graphql`
-      query {
-        allWpCategory {
-          nodes {
-            id
-            link
-            name
+      {
+        wpMenu {
+          id
+          menuItems {
+            nodes {
+              parentId
+              label
+              path
+              childItems {
+                nodes {
+                  path
+                  label
+                }
+              }
+            }
           }
         }
       }
     `
   )
 
-  const categories = data.allWpCategory ? data.allWpCategory.nodes : null
+  // filter only parents
+  const menu = data.wpMenu.menuItems.nodes
+    ? data.wpMenu.menuItems.nodes.filter(menuItem => menuItem.parentId === null)
+    : null
 
   return (
     <header className="header">
@@ -27,18 +39,35 @@ const Header = ({ siteTitle }) => {
           <Link to="/">{siteTitle}</Link>
         </h1>
         <nav>
-          <ul>
-            {categories.map(category => (
-              <li key={category.id}>
-                <Link to={category.link}>{category.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <Menu menu={menu} />
         </nav>
       </div>
     </header>
   )
 }
+
+const Menu = ({ menu }) => (
+  <ul>
+    {menu.map(menuItem => {
+      const children = menuItem.childItems.nodes.length
+        ? menuItem.childItems.nodes
+        : null
+
+      return (
+        <li>
+          <a href={menuItem.path}>{menuItem.label}</a>
+          {children ? (
+            <ul>
+              {children.map(child => (
+                <li>{child.label}</li>
+              ))}
+            </ul>
+          ) : null}
+        </li>
+      )
+    })}
+  </ul>
+)
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
