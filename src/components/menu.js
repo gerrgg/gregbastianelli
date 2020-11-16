@@ -17,10 +17,9 @@ const Menu = ({ menu }) => (
   </ul>
 )
 
-const MenuItem = ({ menuItem, children }) => (
+const MenuItem = ({ menuItem }) => (
   <li className="menu-item">
     <a href={menuItem.path}>{menuItem.label}</a>
-    {children}
   </li>
 )
 
@@ -34,12 +33,10 @@ const DropdownMenuItem = ({ parent, children }) => {
       onMouseLeave={() => setShow(false)}
     >
       {parent.label}
-      <div className={`wrapper ${show ? "show" : ""}`}>
-        <div className="flex-square">
-          {children.map(child => (
-            <Link to={child.path}>{child.label}</Link>
-          ))}
-        </div>
+      <div style={{ display: show ? "block" : "none" }}>
+        {children.map(child => (
+          <Link to={child.path}>{child.label}</Link>
+        ))}
       </div>
     </li>
   )

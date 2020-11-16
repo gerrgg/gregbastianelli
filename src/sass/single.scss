@@ -14,10 +14,11 @@
     margin-top: 0.25rem;
   }
 
-  img {
-    width: 100%;
-    margin: 0 auto;
-    border: 1px solid #f9f9f9;
+  figure {
+    text-align: center;
+    img {
+      margin: 0 auto;
+    }
   }
 
   pre {
