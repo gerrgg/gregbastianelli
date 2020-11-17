@@ -33,10 +33,12 @@ const DropdownMenuItem = ({ parent, children }) => {
       onMouseLeave={() => setShow(false)}
     >
       {parent.label}
-      <div style={{ display: show ? "block" : "none" }}>
-        {children.map(child => (
-          <Link to={child.path}>{child.label}</Link>
-        ))}
+      <div className={`wrapper ${show ? "show" : ""}`}>
+        <div className="flex-square">
+          {children.map(child => (
+            <Link to={child.path}>{child.label}</Link>
+          ))}
+        </div>
       </div>
     </li>
   )
