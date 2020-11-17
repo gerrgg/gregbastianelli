@@ -9,9 +9,13 @@ const Menu = ({ menu }) => (
         : null
 
       return children ? (
-        <DropdownMenuItem parent={menuItem} children={children} />
+        <DropdownMenuItem
+          key={menuItem.id}
+          parent={menuItem}
+          children={children}
+        />
       ) : (
-        <MenuItem menuItem={menuItem} />
+        <MenuItem key={menuItem.id} menuItem={menuItem} />
       )
     })}
   </ul>
@@ -36,7 +40,7 @@ const DropdownMenuItem = ({ parent, children }) => {
       <div className={`wrapper ${show ? "show" : ""}`}>
         <div className="flex-square">
           {children.map(child => (
-            <Link className="button-link" to={child.path}>
+            <Link key={child.id} className="button-link" to={child.path}>
               {child.label}
             </Link>
           ))}

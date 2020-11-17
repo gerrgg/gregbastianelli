@@ -6,6 +6,8 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@popperjs/core": "^2.5.4",
+    "@uiw/react-codemirror": "^3.0.1",
+    "codemirror": "^5.58.2",
     "gatsby": "^2.25.3",
     "gatsby-image": "^2.4.21",
     "gatsby-plugin-manifest": "^2.5.2",
@@ -17,6 +19,8 @@
     "gatsby-source-filesystem": "^2.4.2",
     "gatsby-source-wordpress-experimental": "^2.2.0",
     "gatsby-transformer-sharp": "^2.5.21",
+    "highlight.js": "^10.3.2",
+    "html-react-parser": "^0.14.1",
     "node-sass": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

@@ -12,11 +12,13 @@ const Header = ({ siteTitle }) => {
           id
           menuItems {
             nodes {
+              id
               parentId
               label
               path
               childItems {
                 nodes {
+                  id
                   path
                   label
                 }
