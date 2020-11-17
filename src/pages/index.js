@@ -24,7 +24,7 @@ export default function Home({ data }) {
 
 const PostsColumn = ({ posts }) => (
   <div className="col-12 col-sm-8">
-    <h4>Recently Published</h4>
+    <h4 className="section-header">Recently Published</h4>
     {posts.map(post => (
       <Post key={post.id} post={post} />
     ))}
@@ -40,9 +40,9 @@ const Sidebar = ({ categories, posts }) => {
 
   return (
     <div id="sidebar" className="col-12 col-sm-4">
-      <h4>Top Categories</h4>
+      <h4 className="section-header">Top Categories</h4>
       <TopCategories categories={topCategories} />
-      <h4>Popular Posts</h4>
+      <h4 className="section-header">Popular Posts</h4>
       <PopularPosts posts={popularPosts} />
     </div>
   )
@@ -52,7 +52,7 @@ const TopCategories = ({ categories }) => (
   <div id="top-categories">
     {categories.map(category => {
       return (
-        <Link key={category.id} className="category-link" to={category.link}>
+        <Link key={category.id} className="button-link" to={category.link}>
           {category.name}
         </Link>
       )

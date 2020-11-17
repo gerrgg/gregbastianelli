@@ -11,7 +11,7 @@ export default function BlogPost({ data }) {
     <Layout>
       <div id="archive">
         <header>
-          <h1>{category.name}</h1>
+          <h1 className="section-header">{category.name}</h1>
           <p className="post-count">{posts.length} Articles</p>
         </header>
         <div className="row">

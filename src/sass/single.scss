@@ -14,20 +14,31 @@
     margin-top: 0.25rem;
   }
 
-  figure {
-    text-align: center;
-    img {
-      margin: 0 auto;
+  #content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color-secondary;
     }
-  }
 
-  pre {
-    white-space: pre-wrap;
-    word-break: break-all;
-    background-color: $code-background-color;
-    padding: 1rem;
-    code {
-      color: $code-text-color;
+    figure {
+      text-align: center;
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-all;
+      background-color: $code-background-color;
+      padding: 1rem;
+      code {
+        color: $code-text-color;
+      }
     }
   }
 }

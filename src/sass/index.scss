@@ -2,11 +2,20 @@
   #top-categories {
     display: flex;
     flex-wrap: wrap;
-    a.category-link {
-      padding: 0.25rem 0.5rem;
-      text-shadow: none;
-      text-decoration: none;
-      background-image: none;
+    a.button-link {
+      background-color: $color-main;
+      border: 1px solid $color-main;
+    }
+  }
+
+  li {
+    list-style: none;
+    &:before {
+      content: "\003E";
+      color: $color-secondary;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
   }
 }

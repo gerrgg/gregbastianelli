@@ -16,9 +16,9 @@ export default function BlogPost({ data }) {
     <Layout>
       <div id="single">
         <BlogPostCategory category={category} />
-        <h1 className="title">{post.title}</h1>
+        <h1 className="title section-header">{post.title}</h1>
         <img src={featuredImage} />
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div id="content" dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
     </Layout>
   )

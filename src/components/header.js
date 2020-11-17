@@ -50,8 +50,7 @@ const Logo = ({ siteTitle }) => {
   return (
     <h1 className="logo">
       <Link to="/">
-        <span className="color-main">{string[0]}</span>{" "}
-        <span className="color-secondary">{string[1]}</span>
+        <span>{string[0]}</span> <span>{string[1]}</span>
       </Link>
     </h1>
   )

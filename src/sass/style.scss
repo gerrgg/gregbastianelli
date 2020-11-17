@@ -11,15 +11,8 @@ body {
   background-color: $body-background-color;
 }
 
-.color-main {
-  color: $color-main;
-}
-
-.color-secondary {
-  color: $color-secondary;
-}
-
 a {
+  color: $text-color;
   background-image: none;
   text-shadow: none;
 }
@@ -27,4 +20,26 @@ a {
 div.flex-square {
   display: flex;
   flex-wrap: wrap;
+}
+
+.section-header {
+  color: $color-secondary;
+}
+
+a.button-link {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  width: auto;
+  margin: 0.2rem;
+  background-color: $color-secondary;
+  border: 1px solid $color-secondary;
+  color: $body-background-color;
+  text-align: center;
+  border-radius: 32px;
+  font-weight: 900;
+
+  &:hover {
+    background-color: $code-text-color;
+    border: 1px solid $code-text-color;
+  }
 }
