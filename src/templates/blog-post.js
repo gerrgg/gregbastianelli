@@ -1,8 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
-import cheerio from "cheerio"
-import hljs from "highlight.js"
 
 export default function BlogPost({ data }) {
   const post = data.allWpPost.nodes[0]
