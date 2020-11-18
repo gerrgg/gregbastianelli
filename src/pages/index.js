@@ -6,7 +6,7 @@ import Post from "../components/post"
 
 export default function Home({ data }) {
   // data is the result of the query
-  const posts = data.allWpPost.nodes
+  const posts = data.allWpPost.nodes.sort((a, b) => a.date < b.date)
   const categories = data.allWpCategory.nodes
 
   return (
@@ -86,6 +86,7 @@ export const pageQuery = graphql`
             mediaItemUrl
           }
         }
+        date
       }
     }
     allWpCategory {

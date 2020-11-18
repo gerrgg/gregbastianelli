@@ -21,6 +21,7 @@
     "gatsby-transformer-sharp": "^2.5.21",
     "highlight.js": "^10.3.2",
     "html-react-parser": "^0.14.1",
+    "lodash": "^4.17.20",
     "node-sass": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -31,7 +32,8 @@
     "react-syntax-highlighter": "^15.3.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "typography-theme-ocean-beach": "^0.16.19"
+    "typography-theme-ocean-beach": "^0.16.19",
+    "unescape": "^1.0.1"
   },
   "devDependencies": {
     "prettier": "2.1.2"

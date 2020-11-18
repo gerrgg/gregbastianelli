@@ -1,13 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 
 const Post = ({ post, className }) => {
+  const src = post.featuredImage ? post.featuredImage.node.mediaItemUrl : null
+
   return (
     <div className={`post ${className ? className : ""}`}>
       <Link to={`/${post.slug}`}>
-        <h2>{post.title}</h2>
-        <PostExcerpt excerpt={post.excerpt} />
-        <span>Read more</span>
+        <div>
+          <h2>{post.title}</h2>
+          <PostExcerpt excerpt={post.excerpt} />
+          <span>Read more</span>
+        </div>
+        <PostImage src={src} />
       </Link>
     </div>
   )
@@ -23,5 +28,7 @@ const PostExcerpt = ({ excerpt }) => {
     />
   )
 }
+
+const PostImage = ({ src }) => <img src={src} />
 
 export default Post

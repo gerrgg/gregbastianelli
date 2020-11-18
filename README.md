@@ -4,9 +4,9 @@ My personal coding cheatsheet available to all
 
 ## Todo
 
+- Add a tag or meta to fix code highlighting
 - Post sub-titles (wp backend metadata)
 - Table of contents (parse a > header)
-- Code syntax highlighting
 - Add filter/order by to archive's
 - Add some cute little animations to links/hover
 - Add a form to send me an email (cute, friendly, quick)
