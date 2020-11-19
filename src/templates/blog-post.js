@@ -1,8 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
-import hljs from "highlight.js/lib/core"
-import "highlight.js/styles/dracula.css"
+import helper from "../utils/helper"
 
 export default function BlogPost({ data }) {
   const post = data.allWpPost.nodes[0]
@@ -14,10 +13,8 @@ export default function BlogPost({ data }) {
   const category = post.categories ? post.categories.nodes[0] : null
 
   useEffect(() => {
-    document.querySelectorAll("pre > code").forEach(block => {
-      hljs.highlightBlock(block)
-    })
-  }, [])
+    helper.highlightCode()
+  })
 
   return (
     <Layout>

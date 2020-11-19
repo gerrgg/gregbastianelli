@@ -36,5 +36,11 @@
       word-break: break-all;
       padding: 1rem;
     }
+
+    p > code {
+      background-color: #333;
+      padding: 1px;
+      color: $code-text-color;
+    }
   }
 }

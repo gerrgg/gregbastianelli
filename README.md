@@ -4,7 +4,6 @@ My personal coding cheatsheet available to all
 
 ## Todo
 
-- Add a tag or meta to fix code highlighting
 - Post sub-titles (wp backend metadata)
 - Table of contents (parse a > header)
 - Add filter/order by to archive's
