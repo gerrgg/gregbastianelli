@@ -2,6 +2,20 @@
   max-width: 700px;
   margin: 0 auto;
 
+  p > code {
+    background-color: #333;
+    padding: 1px;
+    color: $code-text-color;
+  }
+
+  blockquote {
+    background-color: $text-color;
+
+    a {
+      color: $color-main;
+    }
+  }
+
   h6.post-category {
     text-align: center;
     a {
@@ -35,12 +49,6 @@
       white-space: pre-wrap;
       word-break: break-all;
       padding: 1rem;
-    }
-
-    p > code {
-      background-color: #333;
-      padding: 1px;
-      color: $code-text-color;
     }
   }
 }

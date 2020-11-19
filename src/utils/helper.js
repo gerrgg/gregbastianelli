@@ -9,7 +9,6 @@ const highlightCode = () => {
   const codes = document.querySelectorAll("pre > code")
   for (let key in codes) {
     if (typeof codes[key] === "object") {
-      // here
       hljs.highlightBlock(codes[key])
     }
   }
