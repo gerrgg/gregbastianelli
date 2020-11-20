@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import helper from "../utils/helper"
 
 export default function BlogPost({ data }) {
-  const post = data.allWpPost.nodes[0]
+  const post = data.allWpPost ? data.allWpPost.nodes[0] : null
 
   const featuredImage = post.featuredImage
     ? post.featuredImage.node.mediaItemUrl

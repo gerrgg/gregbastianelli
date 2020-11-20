@@ -8,7 +8,29 @@
     color: $code-text-color;
   }
 
+  p > a {
+    color: $color-main;
+    text-decoration: underline;
+  }
+
   blockquote {
+    border-left-color: $color-main;
+    p {
+      position: relative;
+      margin-left: 70px;
+
+      &::before {
+        color: $color-main;
+        position: absolute;
+        left: -60px;
+        transform: translate(-25%, 50%);
+        font-size: 1.75rem;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "!!!";
+      }
+    }
+
     background-color: $text-color;
 
     a {
