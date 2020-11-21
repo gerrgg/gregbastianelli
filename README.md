@@ -4,6 +4,8 @@ My personal coding cheatsheet available to all
 
 ## Todo
 
+- Host this blog with gerrg.com domain
+- Build/setup a nice 404 page
 - Post sub-titles (wp backend metadata)
 - Table of contents (parse a > header)
 - Add filter/order by to archive's

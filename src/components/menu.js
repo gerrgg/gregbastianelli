@@ -31,10 +31,11 @@ const DropdownMenuItem = ({ parent, children }) => {
   const [show, setShow] = useState(false)
 
   return (
-    <li
+    <a
       className={`dropdown menu-item`}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
+      href="/tutorials"
     >
       {parent.label}
       <div className={`wrapper ${show ? "show" : ""}`}>
@@ -46,7 +47,7 @@ const DropdownMenuItem = ({ parent, children }) => {
           ))}
         </div>
       </div>
-    </li>
+    </a>
   )
 }
 

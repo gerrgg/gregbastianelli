@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `http://gerrg.com/graphql`,
+        url: `http://api.gerrg.com/graphql`,
       },
     },
     {

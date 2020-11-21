@@ -6,9 +6,7 @@ import helper from "../utils/helper"
 export default function BlogPost({ data }) {
   const post = data.allWpPost ? data.allWpPost.nodes[0] : null
 
-  const featuredImage = post.featuredImage
-    ? post.featuredImage.node.mediaItemUrl
-    : null
+  const featuredImage = post.featuredImage ? post.featuredImage.node : null
 
   const category = post.categories ? post.categories.nodes[0] : null
 
@@ -20,8 +18,12 @@ export default function BlogPost({ data }) {
     <Layout>
       <div id="single">
         <BlogPostCategory category={category} />
+
         <h1 className="title section-header">{post.title}</h1>
-        <img src={featuredImage} />
+        {featuredImage ? (
+          <img src={featuredImage.mediaItemUrl} alt={featuredImage.altText} />
+        ) : null}
+
         <div
           id="content"
           dangerouslySetInnerHTML={{
@@ -54,6 +56,7 @@ export const query = graphql`
         featuredImage {
           node {
             mediaItemUrl
+            altText
           }
         }
       }
