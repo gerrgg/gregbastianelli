@@ -1,6 +1,8 @@
 @import "variables";
 
 .post {
+  margin: 1rem 0;
+
   a {
     color: inherit;
     text-decoration: none;
@@ -22,8 +24,9 @@
     }
 
     .excerpt {
+      display: inline;
       p {
-        margin-bottom: 0.25rem;
+        display: inline;
       }
     }
     .read-more {
@@ -35,7 +38,6 @@
         color: $color-secondary;
       }
       .read-more {
-        border-bottom: 1px solid $color-secondary;
       }
     }
   }

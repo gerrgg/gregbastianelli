@@ -16,29 +16,48 @@ export default function BlogPost({ data }) {
 
   return (
     <Layout>
-      <div id="single">
-        <BlogPostCategory category={category} />
+      <div class="row">
+        <div class="col-12 col-sm-8">
+          <div id="single">
+            <BlogPostCategory category={category} />
 
-        <h1 className="title section-header">{post.title}</h1>
-        {featuredImage ? (
-          <img src={featuredImage.mediaItemUrl} alt={featuredImage.altText} />
-        ) : null}
+            <h1 className="title section-header">{post.title}</h1>
+            {featuredImage ? (
+              <img
+                src={featuredImage.mediaItemUrl}
+                alt={featuredImage.altText}
+              />
+            ) : null}
 
-        <div
-          id="content"
-          dangerouslySetInnerHTML={{
-            __html: post.content,
-          }}
-        />
+            <div
+              id="content"
+              dangerouslySetInnerHTML={{
+                __html: post.content,
+              }}
+            />
+          </div>
+        </div>
+        <div class="col">
+          <TableOfContents />
+        </div>
       </div>
     </Layout>
   )
 }
 
+const TableOfContents = () => {
+  return (
+    <div id="table-of-contents">
+      <h4 className="section-header">Table of Contents</h4>
+      <ul></ul>
+    </div>
+  )
+}
+
 const BlogPostCategory = ({ category }) => (
-  <h6 className="post-category">
+  <h4 className="post-category">
     <Link to={category.link}>{category.name}</Link>
-  </h6>
+  </h4>
 )
 
 export const query = graphql`

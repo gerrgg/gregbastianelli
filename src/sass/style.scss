@@ -52,6 +52,7 @@ h1.logo {
 }
 
 a.button-link {
+  transition: all 0.2s ease-in-out;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
   width: auto;

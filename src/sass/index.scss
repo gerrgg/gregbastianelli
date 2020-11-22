@@ -5,11 +5,24 @@
     a.button-link {
       background-color: $color-main;
       border: 1px solid $color-main;
+
+      &:hover {
+        background-color: $code-text-color;
+        border: 1px solid $code-text-color;
+      }
     }
   }
 
   li {
     list-style: none;
+    transition: all 0.3s ease-out;
+    border-bottom: solid transparent 1px;
+
+    &:hover {
+      border-bottom: 1px solid $color-secondary;
+      border-width: 100%;
+    }
+
     &:before {
       content: "\003E";
       color: $color-secondary;
