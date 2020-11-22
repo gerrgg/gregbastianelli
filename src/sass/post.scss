@@ -26,10 +26,16 @@
         margin-bottom: 0.25rem;
       }
     }
+    .read-more {
+      font-weight: 800;
+    }
 
     &:hover {
       h2 {
-        color: $color-main;
+        color: $color-secondary;
+      }
+      .read-more {
+        border-bottom: 1px solid $color-secondary;
       }
     }
   }

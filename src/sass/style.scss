@@ -1,6 +1,8 @@
 @import "variables";
 @import "grid.css";
+@import "menu";
 @import "header";
+@import "footer";
 @import "index";
 @import "post";
 @import "single";
@@ -17,6 +19,14 @@ a {
   text-shadow: none;
 }
 
+.flex {
+  display: flex;
+
+  &.between {
+    justify-content: space-between;
+  }
+}
+
 div.flex-square {
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +34,21 @@ div.flex-square {
 
 .section-header {
   color: $color-secondary;
+}
+
+h1.logo {
+  margin: 0;
+  font-size: 1.25rem;
+
+  a {
+    span {
+      color: $color-main;
+
+      &:last-child {
+        color: $color-secondary;
+      }
+    }
+  }
 }
 
 a.button-link {

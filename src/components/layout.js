@@ -8,36 +8,57 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Footer from "./footer"
 import "../sass/style.scss"
 
 import Header from "./header"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+  const data = useStaticQuery(
+    graphql`
+      {
+        wpMenu {
+          id
+          menuItems {
+            nodes {
+              id
+              parentId
+              label
+              path
+              childItems {
+                nodes {
+                  id
+                  path
+                  label
+                }
+              }
+            }
+          }
+        }
+        site {
+          siteMetadata {
+            title
+          }
         }
       }
-    }
-  `)
+    `
+  )
+
+  const menuItems = data.wpMenu.menuItems.nodes
+    ? data.wpMenu.menuItems.nodes
+    : null
+
+  const siteTitle = data.site.siteMetadata.title
+    ? data.site.siteMetadata.title
+    : "Title"
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={siteTitle} menuItems={menuItems} />
       <div className="container">
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
+      <Footer siteTitle={siteTitle} menuItems={menuItems} />
     </>
   )
 }

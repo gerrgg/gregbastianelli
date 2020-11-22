@@ -10,7 +10,7 @@ const Post = ({ post, className }) => {
         <div>
           <h2>{post.title}</h2>
           <PostExcerpt excerpt={post.excerpt} />
-          <span>Read more</span>
+          <span className="read-more">Read more</span>
         </div>
         {featuredImage ? (
           <img src={featuredImage.mediaItemUrl} alt={featuredImage.altText} />

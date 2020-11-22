@@ -1,0 +1,38 @@
+ul.menu {
+  list-style: none;
+  margin: 0;
+  padding-left: 1rem;
+  display: flex;
+
+  li.menu-item {
+    padding: 0 1rem;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+
+    .wrapper {
+      cursor: default;
+      display: none;
+      position: absolute;
+      border: 1px solid $color-main;
+      background-color: $color-main;
+      padding: 0.5rem;
+      width: 300px;
+
+      a {
+        display: none;
+      }
+
+      &.show {
+        display: block;
+
+        a {
+          display: block;
+        }
+      }
+    }
+  }
+}

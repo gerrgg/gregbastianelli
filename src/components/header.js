@@ -1,38 +1,13 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Logo from "./logo"
 import Menu from "./menu"
 import "../sass/header.scss"
 
-const Header = ({ siteTitle }) => {
-  const data = useStaticQuery(
-    graphql`
-      {
-        wpMenu {
-          id
-          menuItems {
-            nodes {
-              id
-              parentId
-              label
-              path
-              childItems {
-                nodes {
-                  id
-                  path
-                  label
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
+const Header = ({ siteTitle, menuItems }) => {
   // filter only parents
-  const menu = data.wpMenu.menuItems.nodes
-    ? data.wpMenu.menuItems.nodes.filter(menuItem => menuItem.parentId === null)
+  const menu = menuItems
+    ? menuItems.filter(menuItem => menuItem.parentId === null)
     : null
 
   return (
@@ -44,17 +19,6 @@ const Header = ({ siteTitle }) => {
         </nav>
       </div>
     </header>
-  )
-}
-
-const Logo = ({ siteTitle }) => {
-  const string = siteTitle.split(" ")
-  return (
-    <h1 className="logo">
-      <Link to="/">
-        <span>{string[0]}</span> <span>{string[1]}</span>
-      </Link>
-    </h1>
   )
 }
 
