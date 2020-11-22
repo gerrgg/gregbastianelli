@@ -35,8 +35,16 @@ header.header {
             padding: 0.5rem;
             width: 300px;
 
+            a {
+              display: none;
+            }
+
             &.show {
               display: block;
+
+              a {
+                display: block;
+              }
             }
           }
         }
