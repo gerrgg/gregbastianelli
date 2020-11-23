@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Post from "../components/post"
 
-export default function BlogPost({ data }) {
+export default function BlogCategory({ data }) {
   const category = data.allWpCategory.nodes[0]
   const posts = category.posts.nodes
 

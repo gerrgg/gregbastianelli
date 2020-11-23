@@ -39,9 +39,6 @@ const buildTableOfContents = () => {
       // get current heading
       const heading = headings[key]
 
-      // get next heading
-      const nextHeading = headings[String(parseInt(key) + 1)]
-
       // make slug from current heading
       const slug = makeSlug(heading.textContent)
 
@@ -51,7 +48,10 @@ const buildTableOfContents = () => {
       // assign the slug used in the link as the headers id
       heading.id = slug
 
+      // get current heading level
       const thisHeadingLevel = getHeadingLevel(heading)
+
+      // get next heading level
       const nextHeadingLevel = getHeadingLevel(
         headings[String(parseInt(key) + 1)]
       )
@@ -77,8 +77,6 @@ const buildTableOfContents = () => {
   // add html to DOM
   tableOfContentsDOM.innerHTML = tableOfContentsList
 }
-
-const makeLink = string => `<a href="#${makeSlug(string)}">${string}</a>`
 
 // take a string and slugify it into url friendly slugs
 export const makeSlug = string =>
