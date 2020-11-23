@@ -51,12 +51,22 @@ const buildTableOfContents = () => {
       // assign the slug used in the link as the headers id
       heading.id = slug
 
+      const thisHeadingLevel = getHeadingLevel(heading)
+      const nextHeadingLevel = getHeadingLevel(
+        headings[String(parseInt(key) + 1)]
+      )
+
       // if next header is migger, create list item and open ul
-      if (getHeadingLevel(heading) < getHeadingLevel(nextHeading)) {
+      if (thisHeadingLevel < nextHeadingLevel) {
         tableOfContentsList += `<li>${link}</li><ul>`
         // if next header is smaller, create list item and close ul
-      } else if (getHeadingLevel(heading) > getHeadingLevel(nextHeading)) {
-        tableOfContentsList += `<li>${link}</li></ul>`
+      } else if (thisHeadingLevel > nextHeadingLevel) {
+        // after adding the current link, we calculate the range between the current
+        // and next heading level (e.g jumping from a h4 to h2 (4 - 2 = 2)) and repeat
+        // "</ul>" for the range (close up all the open lists)
+        tableOfContentsList += `<li>${link}</li>${"</ul>".repeat(
+          thisHeadingLevel - nextHeadingLevel
+        )}`
         // Otherwise its just a list item
       } else {
         tableOfContentsList += `<li>${link}</li>`

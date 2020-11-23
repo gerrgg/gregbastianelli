@@ -24,8 +24,8 @@ export default function BlogPost({ data }) {
         <div class="col-12 col-md-8">
           <div id="single">
             <BlogPostCategory category={category} />
+            <BlogPostTitle title={post.title} />
 
-            <h1 className="title section-header">{post.title}</h1>
             {featuredImage ? (
               <img
                 src={featuredImage.mediaItemUrl}
@@ -45,6 +45,10 @@ export default function BlogPost({ data }) {
     </Layout>
   )
 }
+
+const BlogPostTitle = ({ title }) => (
+  <h1 className="title section-header">{title}</h1>
+)
 
 const TableOfContents = () => {
   return (
