@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allWpCategory {
         nodes {
           id
-          link
+          slug
         }
       }
     }
@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // make category pages
   results.data.allWpCategory.nodes.forEach(node => {
     createPage({
-      path: node.link,
+      path: `tutorials/${node.slug}`,
       component: path.resolve(`./src/templates/blog-category.js`),
       context: {
         id: node.id,
