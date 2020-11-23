@@ -12,12 +12,16 @@ export default function BlogPost({ data }) {
 
   useEffect(() => {
     helper.highlightCode()
+    helper.buildTableOfContents()
   })
 
   return (
     <Layout>
       <div class="row">
-        <div class="col-12 col-sm-8">
+        <div class="col">
+          <TableOfContents />
+        </div>
+        <div class="col-12 col-md-8">
           <div id="single">
             <BlogPostCategory category={category} />
 
@@ -36,9 +40,6 @@ export default function BlogPost({ data }) {
               }}
             />
           </div>
-        </div>
-        <div class="col">
-          <TableOfContents />
         </div>
       </div>
     </Layout>
