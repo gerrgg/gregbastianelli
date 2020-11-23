@@ -28,6 +28,8 @@ const buildTableOfContents = () => {
     .querySelector("ul")
 
   // this will hold our html until its ready to be set
+  const firstHeading = headings[0]
+
   let tableOfContentsList = ""
 
   // loop through the headings
@@ -49,15 +51,15 @@ const buildTableOfContents = () => {
       // assign the slug used in the link as the headers id
       heading.id = slug
 
-      // if next header is bigger, create a list item
+      // if next header is migger, create list item and open ul
       if (getHeadingLevel(heading) < getHeadingLevel(nextHeading)) {
-        tableOfContentsList += `<li>${link}</li>`
-        // if next header is smaller, create a nested list and add link
+        tableOfContentsList += `<li>${link}</li><ul>`
+        // if next header is smaller, create list item and close ul
       } else if (getHeadingLevel(heading) > getHeadingLevel(nextHeading)) {
-        tableOfContentsList += `<ul><li>${link}</li>`
-        // otherwise close the list and add current link
+        tableOfContentsList += `<li>${link}</li></ul>`
+        // Otherwise its just a list item
       } else {
-        tableOfContentsList += `</ul><li>${link}</li>`
+        tableOfContentsList += `<li>${link}</li>`
       }
     }
   }
@@ -65,6 +67,8 @@ const buildTableOfContents = () => {
   // add html to DOM
   tableOfContentsDOM.innerHTML = tableOfContentsList
 }
+
+const makeLink = string => `<a href="#${makeSlug(string)}">${string}</a>`
 
 // take a string and slugify it into url friendly slugs
 export const makeSlug = string =>
