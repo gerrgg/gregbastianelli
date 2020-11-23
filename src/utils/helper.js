@@ -27,9 +27,6 @@ const buildTableOfContents = () => {
     .getElementById("table-of-contents")
     .querySelector("ul")
 
-  // this will hold our html until its ready to be set
-  const firstHeading = headings[0]
-
   let tableOfContentsList = ""
 
   // loop through the headings
@@ -56,10 +53,9 @@ const buildTableOfContents = () => {
         headings[String(parseInt(key) + 1)]
       )
 
-      // if next header is migger, create list item and open ul
       if (thisHeadingLevel < nextHeadingLevel) {
+        // if next header is bigger, create list item and open ul
         tableOfContentsList += `<li>${link}</li><ul>`
-        // if next header is smaller, create list item and close ul
       } else if (thisHeadingLevel > nextHeadingLevel) {
         // after adding the current link, we calculate the range between the current
         // and next heading level (e.g jumping from a h4 to h2 (4 - 2 = 2)) and repeat
@@ -67,8 +63,8 @@ const buildTableOfContents = () => {
         tableOfContentsList += `<li>${link}</li>${"</ul>".repeat(
           thisHeadingLevel - nextHeadingLevel
         )}`
-        // Otherwise its just a list item
       } else {
+        // Otherwise its just a list item
         tableOfContentsList += `<li>${link}</li>`
       }
     }

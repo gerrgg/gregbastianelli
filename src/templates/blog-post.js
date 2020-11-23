@@ -53,8 +53,10 @@ const BlogPostTitle = ({ title }) => (
 const TableOfContents = () => {
   return (
     <div id="table-of-contents">
-      <h4 className="section-header">Table of Contents</h4>
-      <ul></ul>
+      <a href="#single">
+        <h4 className="section-header">Back to Top</h4>
+        <ul></ul>
+      </a>
     </div>
   )
 }
