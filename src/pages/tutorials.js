@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import SEO from "../components/seo"
 import Post from "../components/post"
 
 export default function BlogCategory({ data }) {
@@ -15,6 +16,7 @@ export default function BlogCategory({ data }) {
 
   return (
     <Layout>
+      <SEO title="Tutorials | How to | Coding" />
       <div id="archive">
         {categories.map(category => (
           <Category key={category.key} category={category} />

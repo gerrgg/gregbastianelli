@@ -7,4 +7,33 @@ footer#footer {
   ul.menu {
     align-items: flex-end;
   }
+
+  @media #{$sm} {
+    .flex.between {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        text-align: center;
+        .copyright {
+          text-align: center;
+          width: 100%;
+          display: block;
+        }
+      }
+
+      ul.menu {
+        padding: 1rem 0;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+
+        li {
+          a {
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
 }

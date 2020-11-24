@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import SEO from "../components/seo"
 import Post from "../components/post"
 
 export default function BlogCategory({ data }) {
@@ -9,6 +10,7 @@ export default function BlogCategory({ data }) {
 
   return (
     <Layout>
+      <SEO title={`${category.name} Tutorials | How to ${category.name}`} />
       <div id="archive">
         <header>
           <h1 className="section-header">{category.name}</h1>

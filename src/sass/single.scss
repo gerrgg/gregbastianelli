@@ -1,94 +1,140 @@
-:target:before {
-  content: "";
-  display: block;
-  height: 100px;
-  margin: -100px 0 0;
-}
+.col {
+  order: 0;
+  #table-of-contents {
+    position: sticky;
+    top: 0px;
+    transform: translate(-0%, 9.6%);
+    overflow-y: scroll;
 
-#table-of-contents {
-  position: sticky;
-  top: 25px;
-  overflow-y: hidden;
-  max-height: 650px;
+    @media #{$sm} {
+      margin: 0.5rem;
+      transform: translate(0%, 0%);
+      padding: 0.25rem;
+      background-color: $header-link-color;
 
-  ul {
-    font-size: 0.75rem;
+      h4 {
+        span {
+          font-size: 1.25rem;
+        }
+        margin: 0.5rem;
+        color: #ed6a5a;
+      }
+      a {
+        color: $header-color !important;
+      }
+
+      button.close {
+        position: relative;
+        background-color: $body-background-color;
+        color: invert($color: $body-background-color);
+        height: 36px;
+        width: 36px;
+
+        i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 2rem;
+        }
+      }
+
+      ul {
+        font-size: 0.75rem;
+        display: none;
+
+        &.show {
+          display: block;
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
   }
 }
 
-#single {
-  max-width: 700px;
-  margin: 0 auto;
-
-  p > code {
-    background-color: #333;
-    padding: 1px;
-    color: $code-text-color;
+.col-12 {
+  @media #{$sm} {
+    order: 1;
   }
 
-  p > a {
-    color: $color-main;
-    text-decoration: underline;
-  }
+  #single {
+    max-width: 700px;
+    margin: 0 auto;
 
-  blockquote {
-    border-left-color: $color-main;
-    p {
-      position: relative;
-      margin-left: 70px;
+    p > code {
+      background-color: #333;
+      padding: 1px;
+      color: $code-text-color;
+    }
 
-      &::before {
+    p > a {
+      color: $color-main;
+      text-decoration: underline;
+    }
+
+    blockquote {
+      border-left-color: $color-main;
+      p {
+        position: relative;
+        margin-left: 70px;
+
+        &::before {
+          color: $color-main;
+          position: absolute;
+          left: -60px;
+          transform: translate(-25%, 50%);
+          font-size: 1.75rem;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "!!!";
+        }
+      }
+
+      background-color: $text-color;
+
+      a {
         color: $color-main;
-        position: absolute;
-        left: -60px;
-        transform: translate(-25%, 50%);
-        font-size: 1.75rem;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        content: "!!!";
       }
     }
 
-    background-color: $text-color;
-
-    a {
-      color: $color-main;
-    }
-  }
-
-  .post-category {
-    text-align: center;
-    a {
-      color: $color-main;
-    }
-  }
-
-  h1.title {
-    text-align: center;
-    margin-top: 0.25rem;
-  }
-
-  #content {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: $color-secondary;
-    }
-
-    figure {
+    .post-category {
+      @media #{$sm} {
+        margin: 1rem;
+      }
       text-align: center;
-      img {
-        margin: 0 auto;
+      a {
+        color: $color-main;
       }
     }
 
-    pre {
-      white-space: pre-wrap;
-      word-break: break-all;
-      padding: 1rem;
+    h1.title {
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    #content {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $color-secondary;
+      }
+
+      figure {
+        text-align: center;
+        img {
+          margin: 0 auto;
+        }
+      }
+
+      pre {
+        white-space: pre-wrap;
+        word-break: break-all;
+        padding: 1rem;
+      }
     }
   }
 }

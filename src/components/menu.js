@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-const Menu = ({ menu }) => (
-  <ul className="menu">
+const Menu = ({ menu, show }) => (
+  <ul className={`menu ${show ? "show-mobile" : ""}`}>
     {menu.map(menuItem => {
       const children = menuItem.childItems.nodes.length
         ? menuItem.childItems.nodes

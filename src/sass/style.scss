@@ -19,11 +19,31 @@ a {
   text-shadow: none;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
+}
+
 .flex {
   display: flex;
 
+  &.center {
+    justify-content: center;
+    text-align: center;
+  }
+
   &.between {
     justify-content: space-between;
+  }
+
+  &.evenly {
+    justify-content: space-evenly;
+  }
+
+  &.align-center {
+    align-items: center;
   }
 }
 
@@ -68,4 +88,14 @@ a.button-link {
     background-color: $code-text-color;
     border: 1px solid $code-text-color;
   }
+}
+
+button.btn {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.float-right {
+  float: right;
 }
