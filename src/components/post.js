@@ -7,7 +7,7 @@ const Post = ({ post, className }) => {
   return (
     <div className={`post ${className ? className : ""}`}>
       <Link to={`/${post.slug}`}>
-        <div>
+        <div className="words">
           <h2>{post.title}</h2>
           <PostExcerpt excerpt={post.excerpt} />
           <span className="read-more">Read more</span>

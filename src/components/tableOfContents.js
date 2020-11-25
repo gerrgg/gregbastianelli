@@ -11,15 +11,13 @@ const TableOfContents = () => {
 
   return (
     <div id="table-of-contents">
-      <a href="#___gatsby">
-        <h4 className="section-header flex evenly align-center">
-          <span>Table of Contents</span>
-          <button class="btn close" onClick={() => setShow(!show)}>
-            <FontAwesomeIcon icon={icon} />
-          </button>
-        </h4>
-        <ul className={show ? "show" : ""}></ul>
-      </a>
+      <h4 className="section-header flex between align-center">
+        <span>Table of Contents</span>
+        <button class="btn close" onClick={() => setShow(!show)}>
+          <FontAwesomeIcon icon={icon} />
+        </button>
+      </h4>
+      <ul className={show ? "show" : ""}></ul>
     </div>
   )
 }

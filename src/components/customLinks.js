@@ -14,7 +14,7 @@ const CustomLinks = ({ show, setShow }) => (
     <CustomLink
       link="https://github.com/gerrgg/gregbastianelli"
       icon={faCode}
-      text="Code"
+      text="Source"
     />
     <button className="btn mobile-menu" onClick={() => setShow(!show)}>
       <FontAwesomeIcon icon={faBars} />

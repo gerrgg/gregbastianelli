@@ -1,7 +1,12 @@
-@import "variables";
-
 .post {
   margin: 1rem 0;
+
+  @media #{$sm} {
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+    background-color: $post-background-color;
+    border: 1px solid $post-background-color;
+  }
 
   a {
     color: inherit;
@@ -11,14 +16,32 @@
     display: flex;
     align-items: center;
 
+    @media #{$md} {
+      flex-direction: column;
+      .words {
+        order: 1;
+      }
+      img {
+        order: 0;
+      }
+    }
+
     img {
       height: 100%;
-      max-width: 200px;
-      padding-left: 1rem;
+      max-width: 100%;
+      margin: 0.5rem;
+
+      @media #{$xl} {
+        max-width: 300px;
+        padding-left: 2rem;
+      }
     }
 
     h2 {
-      margin: 0.75rem 0rem;
+      @media #{$xl} {
+        margin: 0.75rem 0rem;
+      }
+      margin: 0;
       font-size: 1.25rem;
       color: $color-main;
     }

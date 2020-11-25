@@ -21,6 +21,7 @@ ul.menu {
       background-color: $color-main;
       padding: 0.5rem;
       width: 300px;
+      z-index: 5;
 
       a {
         display: none;

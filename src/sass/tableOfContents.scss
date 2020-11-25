@@ -1,0 +1,72 @@
+.col {
+  order: 0;
+
+  #table-of-contents {
+    position: sticky;
+    top: 0px;
+    transform: translate(-0%, 9.6%);
+    overflow-y: auto;
+    height: 90vh;
+
+    h4 {
+      margin-top: 0;
+      display: block;
+
+      button {
+        display: none;
+      }
+    }
+
+    @media #{$sm} {
+      height: auto;
+      transform: translate(0%, 0%);
+      padding: 0.25rem;
+      margin-top: 1rem;
+      background-color: $header-link-color;
+      overflow: hidden;
+      color: $body-background-color;
+      border-radius: 4px;
+
+      a {
+        color: $body-background-color;
+      }
+
+      h4 {
+        display: flex;
+        span {
+          font-size: 1.25rem;
+        }
+        margin: 0.5rem;
+        color: $body-background-color;
+
+        button.close {
+          display: block;
+          position: relative;
+          background-color: $body-background-color;
+          color: invert($color: $body-background-color);
+          height: 36px;
+          width: 36px;
+
+          i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 2rem;
+          }
+        }
+      }
+
+      ul {
+        font-size: 0.75rem;
+        display: none;
+
+        &.show {
+          display: block;
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ $code-text-color: #b0ee8d;
 $post-background-color: #25273e;
 
 //media
-$sm: "only screen and (max-width: 690px)";
-$md: "only screen and (min-width: 768px)";
-$lg: "only screen and (min-width: 992px)";
-$xl: "only screen and (min-width: 1200px)";
+$sm: "(max-width: 690px)";
+$md: "(max-width: 992px)";
+$lg: "(max-width: 1200px)";
+$xl: "(min-width: 1200px)";
