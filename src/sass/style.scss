@@ -1,13 +1,13 @@
 @import "variables";
-@import "grid.css";
-@import "tableOfContents";
-@import "menu";
 @import "header";
+@import "menu";
+@import "tableOfContents";
 @import "footer";
 @import "index";
 @import "post";
 @import "single";
 @import "archive";
+@import "grid.css";
 
 body {
   color: $text-color;

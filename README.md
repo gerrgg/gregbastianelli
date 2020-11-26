@@ -6,15 +6,16 @@ My personal website backed Wordpress, Built with GatsbyJS and deployed by Netifl
 
 ## Todo
 
-Stuff todo - Maybe do a ~~strikethrough~~ checkbox "- [x] " instead of deleting completed tasks.
+Stuff todo - Maybe do a ~~strikethrough~~ checkbox " - [x] " instead of deleting completed tasks.
 
 ### Easy
 
+- Setup site icon (GB)
+- Close mobile menu when clicking off / scrolling away
 - Add back to top button on mobile
 - Setup site with google/duckduckgo (forget gerrg)
 - Setup stable branch for auto deploy to gregbastianelli
 - Setup analytics (netifly? if free)
-- setup \_\_redirects for wp-content folder?
 - Add filter/order by to archive's
 
 ### Maybe Not Easy

@@ -4,6 +4,10 @@ ul.menu {
   padding-left: 1rem;
   display: flex;
 
+  a {
+    padding-right: 0.5rem;
+  }
+
   li.menu-item {
     padding: 0 1rem;
     margin: 0;

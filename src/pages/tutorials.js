@@ -5,8 +5,6 @@ import SEO from "../components/seo"
 import Post from "../components/post"
 
 export default function BlogCategory({ data }) {
-  console.log(data)
-
   // sorted by post length
   const categories = data.allWpCategory
     ? data.allWpCategory.nodes.sort((a, b) => {

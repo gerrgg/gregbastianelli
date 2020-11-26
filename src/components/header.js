@@ -14,14 +14,12 @@ const Header = ({ siteTitle, menuItems }) => {
   // add state for show/hide menu
   const [show, setShow] = useState(false)
 
-  console.log(show)
-
   return (
     <header className="header">
       <div className="container">
         <nav className="flex between align-center">
           <div className="flex">
-            <Logo siteTitle={"Greg Bastianelli"} />
+            <Logo siteTitle={siteTitle} />
             <Menu menu={menu} show={show} />
           </div>
           <CustomLinks show={show} setShow={setShow} />
