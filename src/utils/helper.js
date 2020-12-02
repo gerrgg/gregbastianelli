@@ -1,5 +1,5 @@
 import hljs from "highlight.js"
-import "highlight.js/styles/atom-one-dark.css"
+import "highlight.js/styles/dracula.css"
 import slugify from "slugify"
 
 hljs.configure({

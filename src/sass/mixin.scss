@@ -1,0 +1,37 @@
+@mixin section-background {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: $post-background-color;
+  border: 1px solid $post-background-color;
+  border-radius: 8px;
+}
+
+@mixin sticky-column {
+  position: sticky;
+  top: 0px;
+  height: 100vh;
+
+  @media #{$sm} {
+    position: relative;
+    height: auto;
+  }
+}
+
+@mixin caret {
+  content: "";
+  border: 4px solid transparent;
+  border-top: 4px solid white;
+  margin-left: 6px;
+  margin-bottom: 6px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.arrow-top {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-bottom: 20px solid $color-main;
+}

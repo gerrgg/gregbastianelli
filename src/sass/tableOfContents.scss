@@ -1,12 +1,15 @@
 .col {
   order: 0;
+  background-color: $post-background-color;
+  padding: 0 2rem;
 
   #table-of-contents {
-    position: sticky;
-    top: 0px;
+    @include sticky-column;
+
     transform: translate(-0%, 9.6%);
     overflow-y: auto;
-    height: 90vh;
+    scrollbar-width: thin;
+    scrollbar-color: $color-main $color-secondary;
 
     h4 {
       margin-top: 0;
@@ -16,12 +19,15 @@
         display: none;
       }
     }
+  }
+}
 
+.col {
+  #table-of-contents {
     @media #{$sm} {
       height: auto;
       transform: translate(0%, 0%);
-      padding: 0.25rem;
-      margin-top: 1rem;
+      margin-bottom: 1rem;
       background-color: $header-link-color;
       overflow: hidden;
       color: $body-background-color;
@@ -34,7 +40,7 @@
       h4 {
         display: flex;
         span {
-          font-size: 1.25rem;
+          font-size: 1rem;
         }
         margin: 0.5rem;
         color: $body-background-color;

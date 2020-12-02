@@ -1,15 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
+import gregLogo from "../images/greg-logo-cyan-black.png"
 
-const Logo = ({ siteTitle }) => {
-  const string = siteTitle.split(" ")
-  return (
-    <h1 className="logo">
-      <Link to="/">
-        <span>{string[0]}</span> <span>{string[1]}</span>
-      </Link>
-    </h1>
-  )
-}
+const Logo = ({ siteTitle }) => (
+  <h1 className="logo">
+    <Link to="/">
+      <img src={gregLogo} alt={siteTitle} />
+    </Link>
+  </h1>
+)
 
 export default Logo

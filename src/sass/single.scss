@@ -11,7 +11,6 @@
       background-color: #333;
       padding: 1px;
       color: $code-text-color;
-      scrollbar-color: dark;
     }
 
     p > a {
@@ -21,15 +20,22 @@
 
     blockquote {
       position: relative;
-      background-color: $text-color;
+      background-color: $post-background-color;
+      color: $text-color;
       padding: 1rem;
+      border-left-color: $color-main;
+
+      cite {
+        color: $text-color;
+        opacity: 0.75;
+      }
 
       @media #{$sm} {
-        margin: 0px;
+        margin: 1rem 0rem;
       }
 
       a {
-        color: $color-main;
+        color: $color-secondary;
       }
     }
 
@@ -64,6 +70,16 @@
           margin: 0 auto;
           height: auto;
           width: auto;
+        }
+      }
+
+      pre.wp-block-code {
+        box-shadow: 0px 0px 1px $color-main;
+
+        code {
+          padding: 1rem;
+          scrollbar-width: thin;
+          scrollbar-color: $color-main $color-secondary;
         }
       }
     }

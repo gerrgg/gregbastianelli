@@ -39,7 +39,8 @@ const DropdownMenuItem = ({ parent, children }) => {
     >
       {parent.label}
       <div className={`wrapper ${show ? "show" : ""}`}>
-        <div className="flex-square">
+        <div className="inner flex-square">
+          <div class="arrow-top"></div>
           {children.map(child => (
             <Link key={child.id} className="button-link" to={child.path}>
               {child.label}

@@ -18,7 +18,7 @@ const Header = ({ siteTitle, menuItems }) => {
     <header className="header">
       <div className="container">
         <nav className="flex between align-center">
-          <div className="flex">
+          <div className="flex align-center">
             <Logo siteTitle={siteTitle} />
             <Menu menu={menu} show={show} />
           </div>

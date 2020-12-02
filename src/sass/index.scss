@@ -2,6 +2,7 @@
   #top-categories {
     display: flex;
     flex-wrap: wrap;
+
     a.button-link {
       background-color: $color-main;
       border: 1px solid $color-main;
@@ -31,4 +32,12 @@
       margin-left: -1em;
     }
   }
+}
+
+#sidebar {
+  @include section-background;
+  @include sticky-column;
+
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

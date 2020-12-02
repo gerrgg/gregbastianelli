@@ -11,7 +11,7 @@ const Footer = ({ siteTitle, menuItems }) => {
   return (
     <footer id="footer">
       <div class="container">
-        <div className="flex between">
+        <div className="wrapper">
           <span>
             <Logo siteTitle={siteTitle} />
             <CopyRight />
@@ -29,7 +29,7 @@ const Footer = ({ siteTitle, menuItems }) => {
 
 const CopyRight = () => (
   <span className="copyright">
-    ©{new Date().getFullYear()}-present
+    ©1994
     {` `}
     Greg Bastianelli. All Rights Reserved.
   </span>
