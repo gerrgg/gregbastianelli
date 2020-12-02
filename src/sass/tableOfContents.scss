@@ -1,23 +1,28 @@
 .col {
   order: 0;
   background-color: $post-background-color;
-  padding: 0 2rem;
 
   #table-of-contents {
     @include sticky-column;
-
-    transform: translate(-0%, 9.6%);
+    margin: 1rem 0;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: $color-main $color-secondary;
 
+    ul {
+      margin-left: 0.75rem;
+    }
+
     h4 {
-      margin-top: 0;
       display: block;
 
       button {
         display: none;
       }
+    }
+
+    a {
+      font-size: 0.75rem;
     }
   }
 }
@@ -42,6 +47,7 @@
         span {
           font-size: 1rem;
         }
+
         margin: 0.5rem;
         color: $body-background-color;
 
