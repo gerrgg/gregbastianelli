@@ -11,6 +11,7 @@
       background-color: #333;
       padding: 1px;
       color: $code-text-color;
+      scrollbar-color: dark;
     }
 
     p > a {
@@ -19,24 +20,13 @@
     }
 
     blockquote {
-      border-left-color: $color-main;
-      p {
-        position: relative;
-        margin-left: 70px;
-
-        &::before {
-          color: $color-main;
-          position: absolute;
-          left: -60px;
-          transform: translate(-25%, 50%);
-          font-size: 1.75rem;
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          content: "!!!";
-        }
-      }
-
+      position: relative;
       background-color: $text-color;
+      padding: 1rem;
+
+      @media #{$sm} {
+        margin: 0px;
+      }
 
       a {
         color: $color-main;
@@ -72,13 +62,9 @@
         text-align: center;
         img {
           margin: 0 auto;
+          height: auto;
+          width: auto;
         }
-      }
-
-      pre {
-        white-space: pre-wrap;
-        word-break: break-all;
-        padding: 1rem;
       }
     }
   }

@@ -19,6 +19,10 @@ const Footer = ({ siteTitle, menuItems }) => {
           <Menu menu={menu} />
         </div>
       </div>
+      <script
+        src="https://kit.fontawesome.com/dd960d1f1a.js"
+        crossorigin="anonymous"
+      ></script>
     </footer>
   )
 }
