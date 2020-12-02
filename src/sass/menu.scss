@@ -16,6 +16,7 @@ ul.menu {
 
   .dropdown {
     position: relative;
+    z-index: 5;
 
     .wrapper {
       display: none;
@@ -26,6 +27,7 @@ ul.menu {
         display: block;
 
         a {
+          z-index: 5;
           display: block;
         }
       }

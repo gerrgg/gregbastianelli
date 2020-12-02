@@ -1,4 +1,7 @@
-#home {
+#sidebar {
+  @include section-background;
+  @include sticky-column;
+
   #top-categories {
     display: flex;
     flex-wrap: wrap;
@@ -32,11 +35,6 @@
       margin-left: -1em;
     }
   }
-}
-
-#sidebar {
-  @include section-background;
-  @include sticky-column;
 
   border-top-left-radius: 0;
   border-top-right-radius: 0;

@@ -10,6 +10,10 @@
   position: sticky;
   top: 0px;
   height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $color-main $color-secondary;
+  z-index: 2;
 
   @media #{$sm} {
     position: relative;
@@ -28,10 +32,10 @@
 }
 
 .arrow-top {
+  width: 100%;
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-
   border-bottom: 20px solid $color-main;
 }
