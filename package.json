@@ -5,10 +5,12 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@csstools/normalize.css": "^11.0.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
+    "css-loader": "^5.0.1",
     "gatsby": "^2.25.3",
     "gatsby-image": "^2.4.21",
     "gatsby-plugin-manifest": "^2.5.2",
@@ -28,8 +30,12 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.19",
+    "style-loader": "^2.0.0",
     "typography": "^0.16.19",
-    "typography-theme-ocean-beach": "^0.16.19"
+    "typography-theme-github": "^0.16.19",
+    "typography-theme-irving": "^0.16.19",
+    "typography-theme-ocean-beach": "^0.16.19",
+    "webpack": "^5.9.0"
   },
   "devDependencies": {
     "prettier": "2.1.2"
