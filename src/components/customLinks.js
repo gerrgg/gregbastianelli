@@ -1,4 +1,5 @@
 import React from "react"
+import Boop from "./boop"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faCode } from "@fortawesome/free-solid-svg-icons"
@@ -21,10 +22,12 @@ const CustomLinks = ({ show, setShow }) => (
 )
 
 const MobileMenuButton = ({ show, setShow }) => (
-  <button className="btn mobile-menu" onClick={() => setShow(!show)}>
-    <FontAwesomeIcon icon={faBars} style={{ width: 25.5, height: 25.5 }} />
-    <span>Menu</span>
-  </button>
+  <Boop y={-5} scale={1.1}>
+    <button className="btn mobile-menu" onClick={() => setShow(!show)}>
+      <FontAwesomeIcon icon={faBars} style={{ width: 25.5, height: 25.5 }} />
+      <span>Menu</span>
+    </button>
+  </Boop>
 )
 
 const CustomLink = ({ link, icon, text }) => (
@@ -34,7 +37,9 @@ const CustomLink = ({ link, icon, text }) => (
     target="
   blank"
   >
-    <FontAwesomeIcon icon={icon} style={{ width: 25.5, height: 25.5 }} />
+    <Boop rotation={20} timing={200}>
+      <FontAwesomeIcon icon={icon} style={{ width: 25.5, height: 25.5 }} />
+    </Boop>
     <span>{text}</span>
   </a>
 )

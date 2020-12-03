@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
+import Boop from "../components/boop"
 import helper from "../utils/helper"
 import TableOfContents from "../components/tableOfContents"
 
@@ -27,10 +28,12 @@ export default function BlogPost({ data }) {
             <BlogPostTitle title={post.title} />
 
             {featuredImage ? (
-              <img
-                src={featuredImage.mediaItemUrl}
-                alt={featuredImage.altText}
-              />
+              <Boop scale={1.01}>
+                <img
+                  src={featuredImage.mediaItemUrl}
+                  alt={featuredImage.altText}
+                />
+              </Boop>
             ) : null}
 
             <div

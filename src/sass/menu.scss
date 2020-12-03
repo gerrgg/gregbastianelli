@@ -16,31 +16,14 @@ ul.menu {
 
   .dropdown {
     color: $text-color;
-    position: relative;
     z-index: 5;
 
     .wrapper {
-      display: none;
-      z-index: 5;
-      position: absolute;
-
-      &.show {
-        display: block;
-
-        a {
-          z-index: 5;
-          display: block;
-        }
-      }
+      position: relative;
 
       .inner {
+        display: none;
         position: absolute;
-        top: 0px;
-        z-index: 5;
-        .arrow-top {
-          position: absolute;
-          top: -15px;
-        }
         cursor: default;
         border-radius: 12px;
         top: 12px;
@@ -48,6 +31,24 @@ ul.menu {
         background-color: $color-main;
         padding: 0.5rem;
         width: 300px;
+
+        .arrow-top {
+          position: absolute;
+          top: -15px;
+          left: 10px;
+        }
+
+        &.show {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          a {
+            text-align: center;
+            z-index: 5;
+            display: block;
+          }
+        }
       }
     }
   }
