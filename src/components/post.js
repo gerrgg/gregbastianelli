@@ -1,4 +1,7 @@
 import React from "react"
+import Boop from "../components/boop"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
 
 const Post = ({ post, className }) => {
@@ -8,9 +11,11 @@ const Post = ({ post, className }) => {
     <div className={`post ${className ? className : ""}`}>
       <Link to={`/${post.slug}`}>
         <div className="words">
-          <h2>{post.title}</h2>
+          <Boop scale={1.1}>
+            <h2>{post.title}</h2>
+          </Boop>
           <PostExcerpt excerpt={post.excerpt} />
-          <span className="read-more">Read more</span>
+          <ReadMore />
         </div>
         {featuredImage ? (
           <img src={featuredImage.mediaItemUrl} alt={featuredImage.altText} />
@@ -19,6 +24,15 @@ const Post = ({ post, className }) => {
     </div>
   )
 }
+
+const ReadMore = () => (
+  <span className="read-more flex align-center">
+    <Boop x={20} timing={300}>
+      <span style={{ paddingRight: 5 }}>Read More</span>
+      <FontAwesomeIcon icon={faChevronRight} />
+    </Boop>
+  </span>
+)
 
 const PostExcerpt = ({ excerpt }) => {
   return (

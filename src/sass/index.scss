@@ -5,8 +5,11 @@
   #top-categories {
     display: flex;
     flex-wrap: wrap;
+    span {
+      padding: 0.25rem 0.5rem;
+    }
 
-    a.button-link {
+    .button-link {
       background-color: $color-main;
       border: 1px solid $color-main;
 
@@ -19,12 +22,9 @@
 
   li {
     list-style: none;
-    transition: all 0.3s ease-out;
-    border-bottom: solid transparent 1px;
 
     &:hover {
       border-bottom: 1px solid $color-secondary;
-      border-width: 100%;
     }
 
     &:before {

@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Boop from "../components/boop"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Post from "../components/post"
@@ -33,7 +34,11 @@ const PostsColumn = ({ posts }) => (
   </div>
 )
 
-const Emoji = ({ emoji }) => <span rel="emoji">{emoji}</span>
+const Emoji = ({ emoji }) => (
+  <Boop scale={1.2}>
+    <span rel="emoji">{emoji}</span>
+  </Boop>
+)
 
 const Sidebar = ({ categories, posts }) => {
   // reverse list and extract 8 (implement view or clap counter)
@@ -56,9 +61,11 @@ const TopCategories = ({ categories }) => (
   <div id="top-categories">
     {categories.map(category => {
       return (
-        <Link key={category.id} className="button-link" to={category.link}>
-          {category.name}
-        </Link>
+        <Boop key={category.id} scale={1.2}>
+          <Link className="button-link" to={category.link}>
+            {category.name}
+          </Link>
+        </Boop>
       )
     })}
   </div>
