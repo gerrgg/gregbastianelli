@@ -13,7 +13,7 @@ const TableOfContents = () => {
     <div id="table-of-contents">
       <h4 className="section-header flex between align-center">
         <span>Table of Contents</span>
-        <button class="btn close" onClick={() => setShow(!show)}>
+        <button className="btn close" onClick={() => setShow(!show)}>
           <FontAwesomeIcon icon={icon} />
         </button>
       </h4>

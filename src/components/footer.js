@@ -10,7 +10,7 @@ const Footer = ({ siteTitle, menuItems }) => {
 
   return (
     <footer id="footer">
-      <div class="container">
+      <div className="container">
         <div className="wrapper">
           <span>
             <Logo siteTitle={siteTitle} />
@@ -21,7 +21,7 @@ const Footer = ({ siteTitle, menuItems }) => {
       </div>
       <script
         src="https://kit.fontawesome.com/dd960d1f1a.js"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
     </footer>
   )

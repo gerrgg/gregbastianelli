@@ -17,7 +17,7 @@ const CustomLinks = ({ show, setShow }) => (
       text="Source"
     />
     <button className="btn mobile-menu" onClick={() => setShow(!show)}>
-      <FontAwesomeIcon icon={faBars} />
+      <FontAwesomeIcon icon={faBars} style={{ width: 25.5, height: 25.5 }} />
       <span>Menu</span>
     </button>
   </div>
@@ -30,7 +30,7 @@ const CustomLink = ({ link, icon, text }) => (
     target="
   blank"
   >
-    <FontAwesomeIcon icon={icon} />
+    <FontAwesomeIcon icon={icon} style={{ width: 25.5, height: 25.5 }} />
     <span>{text}</span>
   </a>
 )

@@ -20,8 +20,8 @@ export default function BlogPost({ data }) {
   return (
     <Layout>
       <SEO title={post.title} />
-      <div class="row">
-        <div class="col-12 col-md-8">
+      <div className="row">
+        <div className="col-12 col-md-8">
           <div id="single">
             <BlogPostCategory category={category} />
             <BlogPostTitle title={post.title} />
@@ -41,7 +41,7 @@ export default function BlogPost({ data }) {
             />
           </div>
         </div>
-        <div class="col">
+        <div className="col">
           <TableOfContents />
         </div>
       </div>

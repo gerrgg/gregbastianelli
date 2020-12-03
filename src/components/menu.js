@@ -31,16 +31,15 @@ const DropdownMenuItem = ({ parent, children }) => {
   const [show, setShow] = useState(false)
 
   return (
-    <a
-      className={`dropdown menu-item`}
+    <button
+      className={`btn dropdown menu-item`}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
-      href="/tutorials"
     >
       {parent.label}
       <div className={`wrapper ${show ? "show" : ""}`}>
         <div className="inner flex-square">
-          <div class="arrow-top"></div>
+          <div className="arrow-top"></div>
           {children.map(child => (
             <Link key={child.id} className="button-link" to={child.path}>
               {child.label}
@@ -48,7 +47,7 @@ const DropdownMenuItem = ({ parent, children }) => {
           ))}
         </div>
       </div>
-    </a>
+    </button>
   )
 }
 
