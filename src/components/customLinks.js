@@ -22,10 +22,12 @@ const CustomLinks = ({ show, setShow }) => (
 )
 
 const MobileMenuButton = ({ show, setShow }) => (
-  <button className="btn mobile-menu" onClick={() => setShow(!show)}>
-    <FontAwesomeIcon icon={faBars} style={{ width: 25.5, height: 25.5 }} />
-    <span>Menu</span>
-  </button>
+  <Boop y={-5} scale={1.1}>
+    <button className="btn mobile-menu" onClick={() => setShow(!show)}>
+      <FontAwesomeIcon icon={faBars} style={{ width: 25.5, height: 25.5 }} />
+      <span>Menu</span>
+    </button>
+  </Boop>
 )
 
 const CustomLink = ({ link, icon, text }) => (

@@ -37,8 +37,8 @@ const DropdownMenuItem = ({ parent, children }) => {
       onMouseLeave={() => setShow(false)}
     >
       {parent.label}
-      <div className={`wrapper ${show ? "show" : ""}`}>
-        <div className="inner flex-square">
+      <div className={`wrapper`}>
+        <div className={`inner flex-square ${show ? "show" : ""}`}>
           <div className="arrow-top"></div>
           {children.map(child => (
             <Link key={child.id} className="button-link" to={child.path}>

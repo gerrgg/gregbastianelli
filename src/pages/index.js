@@ -26,7 +26,7 @@ export default function Home({ data }) {
 const PostsColumn = ({ posts }) => (
   <div className="col-12 col-sm-8">
     <h2 className="title section-header">
-      <Emoji emoji="✨" /> Blog <Emoji emoji="✨" />
+      <Emoji emoji="✨" /> <Boop y={-10}>Blog</Boop> <Emoji emoji="✨" />
     </h2>
     {posts.map(post => (
       <Post key={post.id} post={post} />

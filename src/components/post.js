@@ -8,20 +8,20 @@ const Post = ({ post, className }) => {
   const featuredImage = post.featuredImage ? post.featuredImage.node : null
 
   return (
-    <div className={`post ${className ? className : ""}`}>
-      <Link to={`/${post.slug}`}>
-        <div className="words">
-          <Boop scale={1.1}>
+    <Boop scale={1.1} springConfig={{ tension: 150, friction: 40 }}>
+      <div className={`post ${className ? className : ""}`}>
+        <Link to={`/${post.slug}`}>
+          <div className="words">
             <h2>{post.title}</h2>
-          </Boop>
-          <PostExcerpt excerpt={post.excerpt} />
-          <ReadMore />
-        </div>
-        {featuredImage ? (
-          <img src={featuredImage.mediaItemUrl} alt={featuredImage.altText} />
-        ) : null}
-      </Link>
-    </div>
+            <PostExcerpt excerpt={post.excerpt} />
+            <ReadMore />
+          </div>
+          {featuredImage ? (
+            <img src={featuredImage.mediaItemUrl} alt={featuredImage.altText} />
+          ) : null}
+        </Link>
+      </div>
+    </Boop>
   )
 }
 

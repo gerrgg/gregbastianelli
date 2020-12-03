@@ -18,10 +18,12 @@ const useBoop = ({
     friction: 10,
   },
 }) => {
+  // check if user doesnt want all this motion
   const prefersReducedMotion = usePrefersReducedMotion()
 
   const [isBooped, setIsBooped] = useState(false)
 
+  // set spring styles
   const style = useSpring({
     display: "inline-block",
     transform: isBooped
@@ -34,13 +36,14 @@ const useBoop = ({
     config: springConfig,
   })
 
+  // check is component is booped
   useEffect(() => {
-    if (!isBooped) {
-      return
-    }
+    if (!isBooped) return
+
     const timeoutId = window.setTimeout(() => {
       setIsBooped(false)
     }, timing)
+
     return () => {
       window.clearTimeout(timeoutId)
     }

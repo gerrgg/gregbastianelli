@@ -13,6 +13,10 @@ footer#footer {
       flex-direction: column;
     }
   }
+
+  .copyright {
+    display: block;
+  }
 }
 
 @media #{$sm} {

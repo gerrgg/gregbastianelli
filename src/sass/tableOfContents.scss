@@ -7,7 +7,22 @@
     margin: 1rem 0;
 
     ul {
-      margin-left: 0.75rem;
+      margin-bottom: 0.5rem;
+      li {
+        margin-bottom: 0.25rem;
+        a {
+          font-weight: 700;
+        }
+      }
+
+      ul {
+        li {
+          a {
+            opacity: 0.8;
+            font-weight: 100;
+          }
+        }
+      }
     }
 
     h4 {
@@ -25,9 +40,8 @@
 }
 
 .col {
-  #table-of-contents {
-    @media #{$sm} {
-      height: auto;
+  @media #{$sm} {
+    #table-of-contents {
       transform: translate(0%, 0%);
       margin-bottom: 1rem;
       background-color: $header-link-color;
@@ -35,6 +49,12 @@
       color: $body-background-color;
       border-radius: 4px;
 
+      ul {
+        list-style: none;
+        ul {
+          list-style-type: disc;
+        }
+      }
       a {
         color: $body-background-color;
       }
