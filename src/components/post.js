@@ -29,7 +29,10 @@ const ReadMore = () => (
   <span className="read-more flex align-center">
     <Boop x={20} timing={300}>
       <span style={{ paddingRight: 5 }}>Read More</span>
-      <FontAwesomeIcon icon={faChevronRight} />
+      <FontAwesomeIcon
+        icon={faChevronRight}
+        style={{ height: 14, width: 16 }}
+      />
     </Boop>
   </span>
 )
