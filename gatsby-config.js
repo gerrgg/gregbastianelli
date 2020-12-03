@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Greg Bastianelli`,
-    description: `Coding is more about strategy then memorization.`,
+    description: `Full Stack Developer | Petoskey, Michigan`,
     author: `@gregbastianelli`,
     siteUrl: `https://gregbastianelli.com/`,
   },

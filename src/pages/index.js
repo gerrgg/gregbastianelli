@@ -24,12 +24,16 @@ export default function Home({ data }) {
 
 const PostsColumn = ({ posts }) => (
   <div className="col-12 col-sm-8">
-    <h2 className="title section-header">Blog</h2>
+    <h2 className="title section-header">
+      <Emoji emoji="✨" /> Blog <Emoji emoji="✨" />
+    </h2>
     {posts.map(post => (
       <Post key={post.id} post={post} />
     ))}
   </div>
 )
+
+const Emoji = ({ emoji }) => <span rel="emoji">{emoji}</span>
 
 const Sidebar = ({ categories, posts }) => {
   // reverse list and extract 8 (implement view or clap counter)

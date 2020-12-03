@@ -16,11 +16,15 @@ const CustomLinks = ({ show, setShow }) => (
       icon={faCode}
       text="Source"
     />
-    <button className="btn mobile-menu" onClick={() => setShow(!show)}>
-      <FontAwesomeIcon icon={faBars} style={{ width: 25.5, height: 25.5 }} />
-      <span>Menu</span>
-    </button>
+    <MobileMenuButton show={show} setShow={setShow} />
   </div>
+)
+
+const MobileMenuButton = ({ show, setShow }) => (
+  <button className="btn mobile-menu" onClick={() => setShow(!show)}>
+    <FontAwesomeIcon icon={faBars} style={{ width: 25.5, height: 25.5 }} />
+    <span>Menu</span>
+  </button>
 )
 
 const CustomLink = ({ link, icon, text }) => (
