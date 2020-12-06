@@ -43,10 +43,30 @@
       right: 10px;
       color: $heart-color;
 
+      &:focus {
+        outline: unset;
+      }
+
+      @media #{$md} {
+        right: 0;
+        top: 20px;
+      }
+
+      @media #{$sm} {
+        position: fixed;
+        top: unset;
+        right: 75px;
+        bottom: 5px;
+      }
+
       .text {
         color: $text-color;
         font-size: 1.25rem;
         padding-left: 0.5rem;
+
+        @media #{$sm} {
+          color: $body-background-color;
+        }
       }
     }
   }

@@ -45,7 +45,10 @@ export default function BlogPost({ data }) {
           </div>
         </div>
         <div className="col">
-          <TableOfContents postID={post.databaseId} />
+          <TableOfContents
+            initialHearts={post.hearts}
+            postID={post.databaseId}
+          />
         </div>
       </div>
     </Layout>
