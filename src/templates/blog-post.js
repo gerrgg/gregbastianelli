@@ -16,7 +16,7 @@ export default function BlogPost({ data }) {
   useEffect(() => {
     helper.highlightCode()
     helper.buildTableOfContents()
-  })
+  }, [])
 
   return (
     <Layout>
@@ -45,7 +45,7 @@ export default function BlogPost({ data }) {
           </div>
         </div>
         <div className="col">
-          <TableOfContents />
+          <TableOfContents postID={post.databaseId} />
         </div>
       </div>
     </Layout>
@@ -66,8 +66,10 @@ export const query = graphql`
   query($slug: String!) {
     allWpPost(filter: { slug: { eq: $slug } }) {
       nodes {
+        databaseId
         title
         content
+        hearts
         categories {
           nodes {
             name
