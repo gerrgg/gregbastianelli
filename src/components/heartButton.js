@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import cookie from "../utils/cookie"
 import api from "../utils/api"
-import helper from "../utils/helper"
+import post from "../utils/post"
 
 const HeartButton = ({ postID }) => {
   const [hearts, setHearts] = useState(0)
@@ -23,7 +23,7 @@ const HeartButton = ({ postID }) => {
      */
     async function fetchClicks() {
       // get clicks from cookie or default to 0
-      const initClicks = await helper.getPostClicks(postID)
+      const initClicks = await post.getClicks(postID)
       setClicks(initClicks)
 
       // init opacity at 50%, add another 5% for every click
@@ -32,7 +32,7 @@ const HeartButton = ({ postID }) => {
 
     async function fetchHearts() {
       // gets hearts from api or defaults to 0
-      const initHearts = await helper.getPostHearts(postID)
+      const initHearts = await post.getHearts(postID)
       setHearts(initHearts)
     }
 

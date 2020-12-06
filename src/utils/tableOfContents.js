@@ -1,5 +1,12 @@
 import slugify from "slugify"
 
+/**
+ * Build a table of contents giving each heading an id and creating a
+ * building a nested list of links to those headings
+ *
+ * @param {NodeCollection} target
+ * @param {Node} wrapper
+ */
 const build = (target, wrapper) => {
   let tableOfContentsList = ""
 
@@ -47,14 +54,18 @@ const build = (target, wrapper) => {
   // add html to DOM
   wrapper.innerHTML = tableOfContentsList
 }
-
-// take a string and slugify it into url friendly slugs
+/**
+ * Take a string and slugify it into url friendly slugs
+ * @param {String} string
+ */
 export const makeSlug = string =>
   slugify(string, { remove: /[*+~.()'"!:@;]/g })
     .toLowerCase()
     .replace("_", "-")
-
-// extract heading level from nodename (H1 = 1, H6 = 6)
+/**
+ * Extract heading level from nodename (H1 = 1, H6 = 6)
+ * @param {Node} heading
+ */
 const getHeadingLevel = heading => (heading ? heading.nodeName.substr(1) : null)
 
 export default { build }
