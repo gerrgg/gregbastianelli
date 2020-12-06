@@ -1,20 +1,14 @@
-import hljs from "highlight.js"
-import "highlight.js/styles/dracula.css"
 import slugify from "slugify"
 import cookie from "./cookie"
 import api from "../utils/api"
+import highlighter from "../utils/highlighter"
 
-hljs.configure({
-  languages: ["php", "javascript", "json", "bash", "scss"],
-})
-
+/**
+ * Add syntax highlighting to code blocks wrapped in pre tags
+ */
 const highlightCode = () => {
   const codes = document.querySelectorAll("pre > code")
-  for (let key in codes) {
-    if (typeof codes[key] === "object") {
-      hljs.highlightBlock(codes[key])
-    }
-  }
+  highlighter.highlight(codes)
 }
 
 // grab all the headings in a post and build a table of contents
