@@ -1,6 +1,8 @@
 import hljs from "highlight.js"
 import "highlight.js/styles/dracula.css"
 import slugify from "slugify"
+import cookie from "./cookie"
+import api from "../utils/api"
 
 hljs.configure({
   languages: ["php", "javascript", "json", "bash", "scss"],
@@ -83,4 +85,24 @@ export const makeSlug = string =>
 // extract heading level from nodename (H1 = 1, H6 = 6)
 const getHeadingLevel = heading => (heading ? heading.nodeName.substr(1) : null)
 
-export default { highlightCode, buildTableOfContents }
+const getPostClicks = async postID => {
+  // Get the users clicked posts from cookie
+  const clickedPosts = cookie.get("clickedPosts")
+    ? JSON.parse(cookie.get("clickedPosts"))
+    : 0
+
+  // if clickedPosts doesnt include this post ID - set at 0
+  return !clickedPosts[`${postID}`] ? 0 : clickedPosts[`${postID}`]
+}
+
+const getPostHearts = async postID => {
+  const post = await api.getPost(postID)
+  return post.meta.hearts
+}
+
+export default {
+  highlightCode,
+  buildTableOfContents,
+  getPostClicks,
+  getPostHearts,
+}
