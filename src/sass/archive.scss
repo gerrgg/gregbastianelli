@@ -2,12 +2,21 @@
 
 #archive {
   .post {
+    position: relative;
+    height: 220px;
     background-color: $post-background-color;
     border: 1px solid $post-background-color;
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     border-radius: 12px;
+
+    div.flex {
+      position: absolute;
+      bottom: 5px;
+      width: 95%;
+    }
   }
+
   header {
     margin: 2rem 1rem;
     text-align: center;

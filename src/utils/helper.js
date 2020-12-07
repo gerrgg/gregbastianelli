@@ -1,5 +1,3 @@
-import cookie from "./cookie"
-import api from "../utils/api"
 import highlighter from "../utils/highlighter"
 import tableOfContents from "../utils/tableOfContents"
 
@@ -11,7 +9,10 @@ const highlightCode = () => {
   highlighter.highlight(codes)
 }
 
-// grab all the headings in a post and build a table of contents
+/**
+ * Build a table of contents by passing in targets (the headings you want to link)
+ * and the wrapper (the DOM) whose innerHTML will be altered.
+ */
 const buildTableOfContents = () => {
   // get all headings from #content
   const target = document
@@ -26,24 +27,7 @@ const buildTableOfContents = () => {
   tableOfContents.build(target, wrapper)
 }
 
-const getPostClicks = async postID => {
-  // Get the users clicked posts from cookie
-  const clickedPosts = cookie.get("clickedPosts")
-    ? JSON.parse(cookie.get("clickedPosts"))
-    : 0
-
-  // if clickedPosts doesnt include this post ID - set at 0
-  return !clickedPosts[`${postID}`] ? 0 : clickedPosts[`${postID}`]
-}
-
-const getPostHearts = async postID => {
-  const post = await api.getPost(postID)
-  return post.meta.hearts
-}
-
 export default {
   highlightCode,
   buildTableOfContents,
-  getPostClicks,
-  getPostHearts,
 }

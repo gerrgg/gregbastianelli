@@ -1,3 +1,0 @@
-# Redirects from what the browser requests to what we serve
-/wp-admin     https://gerrg.com/wp-admin/    200
-/wp-json      https://gerrg.com/wp-json/     200

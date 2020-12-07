@@ -16,9 +16,9 @@ export default function BlogCategory({ data }) {
           <h1 className="section-header">{category.name}</h1>
           <p className="post-count">{posts.length} Articles</p>
         </header>
-        <div className="row">
+        <div className="flex">
           {posts.map(post => (
-            <Post key={post.id} post={post} className="col-12 col-md-5" />
+            <Post key={post.id} post={post} />
           ))}
         </div>
       </div>
@@ -34,6 +34,7 @@ export const query = graphql`
         name
         posts {
           nodes {
+            databaseId
             id
             slug
             title

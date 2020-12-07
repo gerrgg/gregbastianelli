@@ -54,6 +54,7 @@ export const query = graphql`
         name
         posts {
           nodes {
+            databaseId
             slug
             title
             excerpt

@@ -3,18 +3,23 @@ import Boop from "../components/boop"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
+import HeartButton from "./heartButton"
 
 const Post = ({ post, className }) => {
+  // console.log(post)
   const featuredImage = post.featuredImage ? post.featuredImage.node : null
 
   return (
-    <Boop scale={1.1} springConfig={{ tension: 150, friction: 40 }}>
+    <Boop scale={1.05} springConfig={{ tension: 150, friction: 40 }}>
       <div className={`post ${className ? className : ""}`}>
         <Link to={`/${post.slug}`}>
           <div className="words">
             <h2>{post.title}</h2>
             <PostExcerpt excerpt={post.excerpt} />
-            <ReadMore />
+            <div className="flex between">
+              <ReadMore />
+              <HeartButton postID={post.databaseId} clickable={false} />
+            </div>
           </div>
           {featuredImage ? (
             <img src={featuredImage.mediaItemUrl} alt={featuredImage.altText} />
