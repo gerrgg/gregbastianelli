@@ -36,51 +36,42 @@
     a {
       font-size: 0.75rem;
     }
+
     .heart-button {
-      z-index: 10;
       position: absolute;
       top: 55px;
-      right: 10px;
-      color: $heart-color;
-
-      &:focus {
-        outline: unset;
-      }
+      right: 30px;
 
       @media #{$md} {
         right: 0;
         top: 20px;
       }
-
-      @media #{$sm} {
-        position: fixed;
-        top: unset;
-        right: 75px;
-        bottom: 5px;
-      }
-
-      .text {
-        color: $text-color;
-        font-size: 1.25rem;
-        padding-left: 0.5rem;
-
-        @media #{$sm} {
-          color: $body-background-color;
-        }
-      }
     }
   }
 }
 
-.col {
-  @media #{$sm} {
+@media #{$sm} {
+  .col {
+    background-color: unset;
+
     #table-of-contents {
+      position: fixed;
+      transition: 0.25s ease;
+      bottom: 0;
+      top: 89%;
+      right: 10px;
       transform: translate(0%, 0%);
       margin-bottom: 1rem;
       background-color: $header-link-color;
       overflow: hidden;
       color: $body-background-color;
       border-radius: 4px;
+      width: 125px;
+      height: 50px;
+
+      h4 > span {
+        display: none;
+      }
 
       ul {
         list-style: none;
@@ -120,13 +111,15 @@
 
       ul {
         font-size: 0.75rem;
-        display: none;
+      }
 
-        &.show {
-          display: block;
-          ul {
-            display: block;
-          }
+      .heart-button {
+        top: 10px;
+
+        .text {
+          color: $body-background-color;
+          font-size: 1rem;
+          padding: 1px;
         }
       }
     }

@@ -92,6 +92,7 @@ export const pageQuery = graphql`
         title
         excerpt
         slug
+        databaseId
         featuredImage {
           node {
             mediaItemUrl

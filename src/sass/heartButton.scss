@@ -1,0 +1,14 @@
+.heart-button {
+  z-index: 10;
+  color: $heart-color;
+
+  &:focus {
+    outline: unset;
+  }
+
+  .text {
+    color: $text-color;
+    font-size: 1.25rem;
+    padding-left: 0.5rem;
+  }
+}

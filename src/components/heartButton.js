@@ -7,7 +7,7 @@ import cookie from "../utils/cookie"
 import api from "../utils/api"
 import post from "../utils/post"
 
-const HeartButton = ({ postID }) => {
+const HeartButton = ({ postID, clickable = true }) => {
   const [hearts, setHearts] = useState(0)
 
   const [clicks, setClicks] = useState(0)
@@ -49,7 +49,7 @@ const HeartButton = ({ postID }) => {
     clickTrigger()
 
     // check click limit
-    if (clicks > 9) return
+    if (clicks > 9 || !clickable) return
 
     setClicks(clicks + 1)
 

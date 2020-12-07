@@ -2,17 +2,21 @@ import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Boop from "../components/boop"
 import HeartButton from "../components/heartButton"
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons"
+import { faBookOpen } from "@fortawesome/free-solid-svg-icons"
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
-const TableOfContents = ({ initialHearts, postID }) => {
+const TableOfContents = ({ postID }) => {
   const [show, setShow] = useState(false)
 
-  const icon = !show ? faChevronUp : faChevronDown
+  const icon = !show ? faBookOpen : faTimes
+
+  const style = !show
+    ? {}
+    : { height: 500, width: window.innerWidth - 20, top: 0 }
 
   return (
-    <div id="table-of-contents">
-      <HeartButton initialHearts={initialHearts} postID={postID} />
+    <div id="table-of-contents" style={style}>
+      <HeartButton postID={postID} />
       <h4 className="section-header flex between align-center">
         <span>Table of Contents</span>
         <Boop scale={1.1}>
@@ -21,7 +25,7 @@ const TableOfContents = ({ initialHearts, postID }) => {
           </button>
         </Boop>
       </h4>
-      <ul className={show ? "show" : ""}></ul>
+      <ul></ul>
     </div>
   )
 }
