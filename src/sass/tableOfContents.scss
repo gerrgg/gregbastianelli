@@ -57,17 +57,15 @@
     #table-of-contents {
       position: fixed;
       transition: 0.25s ease;
-      bottom: 0;
-      top: 89%;
-      right: 10px;
+      top: -7px;
       transform: translate(0%, 0%);
       margin-bottom: 1rem;
-      background-color: $header-link-color;
       overflow: hidden;
-      color: $body-background-color;
       border-radius: 4px;
       width: 125px;
       height: 50px;
+      background-color: $header-link-color;
+      color: $body-background-color;
 
       h4 > span {
         display: none;
