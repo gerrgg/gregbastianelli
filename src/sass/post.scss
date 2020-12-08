@@ -1,4 +1,9 @@
 .post {
+  & > span {
+    height: 100%;
+  }
+
+  position: relative;
   margin-bottom: 2rem;
   @include section-background;
 
@@ -31,19 +36,19 @@
     }
 
     h2 {
-      @media #{$xl} {
-        margin: 0.75rem 0rem;
-      }
-      margin: 0;
+      margin: 0.75rem 0rem;
       font-size: 1.25rem;
       color: $color-main;
     }
 
     .excerpt {
       p {
-        display: inline;
+        max-height: 75px;
+        overflow: hidden;
+        margin: 0;
       }
     }
+
     .read-more {
       font-weight: 800;
     }

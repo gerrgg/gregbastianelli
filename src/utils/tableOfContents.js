@@ -21,7 +21,7 @@ const build = (target, wrapper) => {
       const slug = makeSlug(heading.textContent)
 
       // create a link to the header
-      const link = `<a href="#${slug}">${heading.textContent}</a>`
+      const link = `<a href="#${slug}" onclick="console.log(e.target)">${heading.textContent}</a>`
 
       // assign the slug used in the link as the headers id
       heading.id = slug
@@ -54,6 +54,7 @@ const build = (target, wrapper) => {
   // add html to DOM
   wrapper.innerHTML = tableOfContentsList
 }
+
 /**
  * Take a string and slugify it into url friendly slugs
  * @param {String} string
@@ -62,10 +63,15 @@ export const makeSlug = string =>
   slugify(string, { remove: /[*+~.()'"!:@;]/g })
     .toLowerCase()
     .replace("_", "-")
+
 /**
  * Extract heading level from nodename (H1 = 1, H6 = 6)
  * @param {Node} heading
  */
 const getHeadingLevel = heading => (heading ? heading.nodeName.substr(1) : null)
+
+const removeShowFromDom = e => {
+  console.log(e.target)
+}
 
 export default { build }

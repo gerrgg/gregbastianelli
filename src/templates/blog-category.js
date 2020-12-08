@@ -16,9 +16,9 @@ export default function BlogCategory({ data }) {
           <h1 className="section-header">{category.name}</h1>
           <p className="post-count">{posts.length} Articles</p>
         </header>
-        <div className="flex">
+        <div className="row">
           {posts.map(post => (
-            <Post key={post.id} post={post} />
+            <Post key={post.id} post={post} className="col-12 col-md-5" />
           ))}
         </div>
       </div>
