@@ -27,4 +27,4 @@ Stuff todo - Maybe do a ~~strikethrough~~ checkbox " - [x] " instead of deleting
 - Add some cute little animations to links/hover (SpringJS / Keyframes)
 - Setup a contact form above the footer
 - A Github page with a list of repo's, commits, activity, etc.
-- Snippets page which connents to github API
+- Snippets page which connects to github API
